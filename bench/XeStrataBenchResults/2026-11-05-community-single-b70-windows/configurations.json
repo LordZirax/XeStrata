@@ -1,0 +1,32 @@
+{
+ "engine_args": [
+  "--pack",
+  "<data>/packs/coder-iq1_m",
+  "--native",
+  "<models>/Qwen3.8-Flash-Next-GSQ-RCO-IQ1_M-00001-of-00002.gguf",
+  "--ple-gguf",
+  "<models>/Qwen3.8-Flash-Next-GSQ-RCO-IQ1_M-00002-of-00002.gguf",
+  "--expert-profile",
+  "<app>/data/expert-profile-coder.bin",
+  "--expert-cache",
+  "auto",
+  "--prefill",
+  "auto",
+  "--spec",
+  "4",
+  "--spec-min-p",
+  "0.5",
+  "--mtp",
+  "<data>/mtp/rt",
+  "--max-context",
+  "32768",
+  "--kv",
+  "int8",
+  "--vram-free-mib",
+  "31799"
+ ],
+ "engine_env": [],
+ "gpu_pci": "0000:b0:00.0",
+ "note": "single card; no layer split; expert cache sized itself to 12288 experts / 23.42 GiB of VRAM from the 31799 MiB free it saw at start",
+ "quant": "GSQ-RCO IQ1_M (14B active of 125B, 2 shards, 58.41 GB) - NOT comparable to the UD-Q4_K_XL used in the 4x B70 record"
+}

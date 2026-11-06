@@ -1,0 +1,73 @@
+{
+ "method": "needle-in-a-haystack: a unique 5-digit code buried at 10/50/90% of a filler prompt, asked back with temperature 0 and a 24-token cap; one fresh-context request per cell (a full cold prefill)",
+ "cells": [
+  {
+   "size_tokens_target": 4096,
+   "depth": 0.1,
+   "code": "39567",
+   "recalled": true,
+   "prompt_tokens": 3630,
+   "prompt_ms": 3285,
+   "pp_tok_s": 1105.1,
+   "reply": "39567",
+   "wall_s": 3.4
+  },
+  {
+   "size_tokens_target": 4096,
+   "depth": 0.5,
+   "code": "33722",
+   "recalled": true,
+   "prompt_tokens": 3630,
+   "prompt_ms": 2985,
+   "pp_tok_s": 1216.0,
+   "reply": "33722",
+   "wall_s": 3.1
+  },
+  {
+   "size_tokens_target": 4096,
+   "depth": 0.9,
+   "code": "92369",
+   "recalled": true,
+   "prompt_tokens": 3630,
+   "prompt_ms": 2986,
+   "pp_tok_s": 1215.8,
+   "reply": "92369",
+   "wall_s": 3.1
+  },
+  {
+   "size_tokens_target": 24576,
+   "depth": 0.1,
+   "code": "17034",
+   "recalled": true,
+   "prompt_tokens": 21597,
+   "prompt_ms": 11222,
+   "pp_tok_s": 1924.5,
+   "reply": "17034",
+   "wall_s": 11.4
+  },
+  {
+   "size_tokens_target": 24576,
+   "depth": 0.5,
+   "code": "87374",
+   "recalled": true,
+   "prompt_tokens": 21597,
+   "prompt_ms": 11225,
+   "pp_tok_s": 1923.9,
+   "reply": "87374",
+   "wall_s": 11.3
+  },
+  {
+   "size_tokens_target": 24576,
+   "depth": 0.9,
+   "code": "10054",
+   "recalled": true,
+   "prompt_tokens": 21597,
+   "prompt_ms": 11229,
+   "pp_tok_s": 1923.3,
+   "reply": "10054",
+   "wall_s": 11.3
+  }
+ ],
+ "recalled": 6,
+ "total": 6
+}

@@ -1,0 +1,4 @@
+  B70-win-4k-raw run1: prefill  1169.2 tok/s (3223 tok, 2757 ms)  decode   62.2 tok/s (128 tok, 2057 ms)  drafts 56/82
+  B70-win-4k-raw run2: prefill  1169.4 tok/s (3223 tok, 2756 ms)  decode   68.4 tok/s (128 tok, 1872 ms)  drafts 64/81
+  B70-win-4k-raw run3: prefill  1170.0 tok/s (3223 tok, 2755 ms)  decode   67.1 tok/s (128 tok, 1908 ms)  drafts 62/85
+  B70-win-4k-raw MEDIAN: prefill  1169.4 tok/s   decode   67.1 tok/s   drafts 62/82

@@ -1,0 +1,4 @@
+  B70-win-30k-raw run1: prefill  1978.2 tok/s (29365 tok, 14844 ms)  decode   63.8 tok/s (128 tok, 2005 ms)  drafts 59/84
+  B70-win-30k-raw run2: prefill  1978.7 tok/s (29365 tok, 14841 ms)  decode   70.4 tok/s (128 tok, 1819 ms)  drafts 69/87
+  B70-win-30k-raw run3: prefill  1978.0 tok/s (29365 tok, 14846 ms)  decode   75.7 tok/s (128 tok, 1692 ms)  drafts 80/99
+  B70-win-30k-raw MEDIAN: prefill  1978.2 tok/s   decode   70.4 tok/s   drafts 69/87

@@ -1,0 +1,6 @@
+{"size": 1, "prompt_tokens": 3223, "run": 1, "pp_tok_s": 1169.2, "tg_tok_s": 62.2, "prompt_ms": 2757.0, "decode_ms": 2057.0, "drafts_accepted": 56, "drafts_offered": 82}
+{"size": 1, "prompt_tokens": 3223, "run": 2, "pp_tok_s": 1169.4, "tg_tok_s": 68.4, "prompt_ms": 2756.0, "decode_ms": 1872.0, "drafts_accepted": 64, "drafts_offered": 81}
+{"size": 1, "prompt_tokens": 3223, "run": 3, "pp_tok_s": 1170.1, "tg_tok_s": 67.1, "prompt_ms": 2755.0, "decode_ms": 1908.0, "drafts_accepted": 62, "drafts_offered": 85}
+{"size": 2, "prompt_tokens": 29365, "run": 1, "pp_tok_s": 1978.2, "tg_tok_s": 63.8, "prompt_ms": 14844.0, "decode_ms": 2005.0, "drafts_accepted": 59, "drafts_offered": 84}
+{"size": 2, "prompt_tokens": 29365, "run": 2, "pp_tok_s": 1978.7, "tg_tok_s": 70.4, "prompt_ms": 14841.0, "decode_ms": 1819.0, "drafts_accepted": 69, "drafts_offered": 87}
+{"size": 2, "prompt_tokens": 29365, "run": 3, "pp_tok_s": 1978.0, "tg_tok_s": 75.7, "prompt_ms": 14846.0, "decode_ms": 1692.0, "drafts_accepted": 80, "drafts_offered": 99}

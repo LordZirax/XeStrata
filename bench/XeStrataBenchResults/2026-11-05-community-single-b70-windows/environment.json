@@ -1,0 +1,10 @@
+{
+ "os": "Microsoft Windows 11 Pro build 26300 (10.0.26300), native - no WSL",
+ "gpu_driver": "Intel 32.0.101.8976",
+ "dotnet": "Microsoft.NETCore.App 10.0.14 + Microsoft.WindowsDesktop.App 10.0.14",
+ "vc_redist": "present (vcruntime140.dll, msvcp140.dll)",
+ "level_zero": "ze_loader.dll is present in %SystemRoot%\\System32; the package also carries its own runtime - which one the engine loaded was not determined",
+ "onemkl": "not installed (setup offered it and it was declined)",
+ "harness_python": "CPython 3.14.9, stdlib only - bench.py and needles.py unmodified",
+ "bios": "not read by any log in this record; the engine reported 'PCIe link not readable' for this card"
+}

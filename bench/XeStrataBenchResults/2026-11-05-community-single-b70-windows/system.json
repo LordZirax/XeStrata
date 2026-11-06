@@ -1,0 +1,30 @@
+{
+ "gpus": [
+  {
+   "index": 0,
+   "pci": "0000:b0:00.0",
+   "name": "Intel Arc Pro B70",
+   "vram_gb_engine_reading": 31,
+   "free_mib_at_start": 31831,
+   "used_for": "this measurement"
+  },
+  {
+   "index": 1,
+   "name": "Intel Arc Pro B50",
+   "vram_gb_engine_reading": 16,
+   "used_for": "idle"
+  },
+  {
+   "index": 2,
+   "name": "Intel Graphics (integrated)",
+   "vram_gb_engine_reading": 0,
+   "used_for": "idle"
+  }
+ ],
+ "cpu": "Intel Core Ultra 9 285HX (24 threads, AVX2, no AVX-512 - the engine reported it)",
+ "ram_gib_visible": 127.4,
+ "motherboard": "ARWSA (Minisforum MS-02 Ultra)",
+ "storage": "single NVMe volume holding model, pack and MTP",
+ "engine_memory_reading": "memory guard limit 127.4 GiB, available 110.4 GiB at start",
+ "vram_note": "WMI reports 4095 MB for every card (32-bit AdapterRAM overflow) - ignore it; the figures here are the engine's own"
+}

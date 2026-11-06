@@ -1,0 +1,41 @@
+{
+ "engine": "xe0.2.2-1 (Windows package)",
+ "measured": "2026-11-05",
+ "generated_tokens_cap": 128,
+ "temperature": 0,
+ "runs_per_size": 3,
+ "sizes": [
+  {
+   "prompt_tokens": 3223,
+   "pp_tok_s_median": 1169.4,
+   "pp_tok_s_min": 1169.2,
+   "pp_tok_s_max": 1170.1,
+   "tg_tok_s_median": 67.1,
+   "tg_tok_s_min": 62.2,
+   "tg_tok_s_max": 68.4
+  },
+  {
+   "prompt_tokens": 29365,
+   "pp_tok_s_median": 1978.2,
+   "pp_tok_s_min": 1978.0,
+   "pp_tok_s_max": 1978.7,
+   "tg_tok_s_median": 70.4,
+   "tg_tok_s_min": 63.8,
+   "tg_tok_s_max": 75.7
+  }
+ ],
+ "needle_recall": {
+  "cells": 6,
+  "recalled": 6,
+  "prompt_tokens": [
+   3630,
+   21597
+  ],
+  "depths": [
+   0.1,
+   0.5,
+   0.9
+  ]
+ },
+ "note": "131,072-token size not measured: this run used --max-context 32768"
+}

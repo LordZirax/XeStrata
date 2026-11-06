@@ -1,0 +1,14 @@
+{
+ "source": "release",
+ "package": "XeStrata-0.2.2-1-windows-x64.7z",
+ "backend": "xe",
+ "version": "0.2.2-1",
+ "compiler": {
+  "kind": "none - prebuilt package, no local build",
+  "xmx": true,
+  "onemkl": false,
+  "license": "free (oneMKL declined, so XeStrata's own kernels did the matrix products)"
+ },
+ "patches": "none - the package is untouched",
+ "note": "no src/ctest fields: nothing was compiled here. The setup compiled the GPU code for this model once, 784 s"
+}

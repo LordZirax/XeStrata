@@ -1,0 +1,53 @@
+# Engine startup, this run (native Windows, single Arc Pro B70)
+Strata - Qwen3.8-Flash-Next on a normal PC (a GPU + system RAM + CPU)
+    GPU 0: Intel(R) Arc(TM) Pro B70 Graphics, 31 GB VRAM - can be used
+    GPU 1: Intel(R) Arc(TM) Pro B50 Graphics, 16 GB VRAM - can be used
+    GPU 2: Intel(R) Graphics, no VRAM of its own - can be used
+  [ok] CPU: Intel(R) Core(TM) Ultra 9 285HX (AVX2)
+  1) IQ1_M    the Coder's only size: half the experts, stored like IQ3_S (3.5 bits); download 58 GB, uses ~23 GB of RAM
+  The MTP draft layer (speculative decoding, ~2x faster output) comes from the original Qwen checkpoint:
+  only its ~5 GB of MTP tensors are downloaded.
+# MTP block in the BF16 checkpoint
+| `mtp.layers.0.mlp.experts.down_proj` | BF16 | 512x2560x640 | 1677.7 |
+| `mtp.layers.0.mlp.experts.gate_up_proj` | BF16 | 512x1280x2560 | 3355.4 |
+| `mtp.layers.0.mlp.shared_expert.down_proj.weight` | BF16 | 2560x640 | 3.3 |
+| `mtp.layers.0.mlp.shared_expert.gate_proj.weight` | BF16 | 640x2560 | 3.3 |
+| `mtp.layers.0.mlp.shared_expert.up_proj.weight` | BF16 | 640x2560 | 3.3 |
+| `mtp.layers.0.mlp.shared_expert_gate.weight` | BF16 | 1x2560 | 0.0 |
+  > <app>\python\python.exe <app>\app\tools\mtp_pack.py --src <data>\mtp --experts q2_0 --out <data>\mtp\mtp-q2_0.gguf
+mtp.layers.0.mlp.experts.down_proj: q2_0 235.9 MB
+mtp.layers.0.mlp.experts.gate_up_proj: q2_0 471.9 MB
+mtp.layers.0.mlp.shared_expert.down_proj.weight: BF16 3.3 MB
+mtp.layers.0.mlp.shared_expert.gate_proj.weight: BF16 3.3 MB
+mtp.layers.0.mlp.shared_expert.up_proj.weight: BF16 3.3 MB
+mtp.layers.0.mlp.shared_expert_gate.weight: BF16 0.0 MB
+experts.bin 707788800 B, dense.bin 116099072 B, 29 tensors -> <data>\mtp\rt
+  mlp.shared_expert.down_proj.weight q8_0 2560 640 42926080 1740800
+  mlp.shared_expert.gate_proj.weight q8_0 640 2560 44666880 1740800
+  mlp.shared_expert.up_proj.weight q8_0 640 2560 46407680 1740800
+  mlp.shared_expert_gate.weight bf16 1 2560 48148480 5120
+  [ok] MTP draft layer: <data>\mtp\rt
+  Several requests at once (opt-in): --parallel 4 decodes up to 4 together instead of one after the other (each takes ~0.6 GB of VRAM from the expert cache; docs/BATCHING.md).
+  Compiling the GPU code for this model: starting it once and asking two questions (1-3 minutes) ...
+  [ok] GPU code compiled for this model (784 s)
+  [ok] the expert cache is sized from at most 31799 MiB of free VRAM (what this start saw, less 32; kept in the config, so it holds the same experts every run)
+Strata - Qwen3.8-Flash-Next on a normal PC (a GPU + system RAM + CPU)
+  [ok] GPU: GPU 0 (Intel(R) Arc(TM) Pro B70 Graphics, 31 GB)
+  Settings (xestrata-coder-iq1_m.json): --expert-cache auto --prefill auto --spec 4 --spec-min-p 0.5
+loading the model (the first start takes a minute or two) ...
+[strata] starting the engine: reading the model's weights ...
+[strata] loading the experts into RAM (about 30 GB) and locking part of them for the GPU.
+[strata] experts loaded: 23.42 GiB at 2.62 GiB/s (16 s so far)
+[strata] filling the GPU's expert cache (12288 experts, 23.42 GiB of VRAM) ...
+[strata] almost ready ...
+ready: http://127.0.0.1:8095/v1  (OpenAI: /v1/chat/completions, Anthropic: /v1/messages, context 32768 tokens)
+[strata] reading the prompt: 69 tokens, 10 s so far
+[strata] reading the prompt: 64 of 69 tokens, 12 s so far
+[strata] done: 53 tokens in 13 s (72.0 tok/s) (stop, cancel=False), expert cache 100.0% hit
+[strata] reading the prompt: 73 tokens, 10 s so far
+[strata] reading the prompt: 68 of 73 tokens, 18 s so far
+[strata] thinking: 55 of max 400 tokens, 69.1 tok/s, 19 s
+[strata] thinking: 142 of max 400 tokens, 77.5 tok/s, 20 s
+[strata] thinking: 244 of max 400 tokens, 85.1 tok/s, 21 s
+[strata] thinking: 344 of max 400 tokens, 88.2 tok/s, 22 s
+[strata] done: 400 tokens in 22 s (89.2 tok/s) (length, cancel=False), expert cache 100.0% hit
